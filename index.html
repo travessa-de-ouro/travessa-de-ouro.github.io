@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://images.unsplash.com; font-src https://fonts.gstatic.com; script-src 'sha256-fk9l1inx25GDKuzH+zPcSlgRGgM7soC6IOaCKx3WSIA='; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https://images.unsplash.com; font-src https://fonts.gstatic.com; script-src 'sha256-qdS54+EneVtFeWDjOyCFb6qB5MAY5LOCAjp+PvdWL4s='; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>Travessa de Ouro — 30 sobremesas geladas para vender no fim de ano</title>
 <meta name="description" content="E-book com 30 sobremesas geladas sem forno — tortas, travessas e potes — feitas a partir de dois cremes-mestre. Inclui precificação, validade e calendário de encomendas.">
@@ -77,6 +77,26 @@ section{padding:76px 0}
 .ph img{transition:transform .6s}
 .ph:hover img{transform:scale(1.06)}
 .ph span{position:absolute;left:0;right:0;bottom:0;padding:34px 14px 13px;background:linear-gradient(transparent,rgba(28,15,9,.88));color:#FFF6E3;font-family:Fraunces,serif;font-weight:700;font-size:16px;text-align:left;line-height:1.2}
+/* carrossel automático de sobremesas */
+.cc{--w:clamp(178px,50vw,290px);--surface:var(--cream);position:relative;margin:22px auto 0;outline:none}
+.cc-stage{position:relative;height:calc(var(--w)*1.25*1.45);perspective:1000px;touch-action:pan-y;cursor:grab;user-select:none;-webkit-user-select:none}
+.cc-stage.drag{cursor:grabbing}
+.cc-in{position:absolute;inset:0;transform-style:preserve-3d}
+.cc-p{position:absolute;left:50%;top:50%;width:var(--w);aspect-ratio:4/5;margin:calc(var(--w)*-.625) 0 0 calc(var(--w)*-.5);border-radius:16px;overflow:hidden;background:var(--cream2);box-shadow:0 30px 50px -26px rgba(42,24,16,.65);will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.cc-p img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;-webkit-user-drag:none}
+.cc-p::after{content:'';position:absolute;inset:0;border-radius:inherit;box-shadow:inset 0 0 0 1px rgba(200,151,63,.28);background:var(--surface);opacity:var(--dim,0)}
+.cc::before,.cc::after{content:'';position:absolute;top:0;height:calc(var(--w)*1.25*1.45);width:14vw;z-index:2;pointer-events:none}
+.cc::before{left:0;background:linear-gradient(90deg,var(--surface),transparent)}
+.cc::after{right:0;background:linear-gradient(-90deg,var(--surface),transparent)}
+.cc-floor{position:absolute;left:15%;right:15%;top:calc(var(--w)*1.25*1.3);height:60px;background:radial-gradient(closest-side,rgba(200,151,63,.2),transparent);pointer-events:none}
+.cc-ui{user-select:none;-webkit-user-select:none;display:flex;align-items:center;justify-content:center;gap:22px;margin-top:14px;position:relative;z-index:3;padding:0 16px}
+.cc-cap{min-width:230px;text-align:center}
+.cc-cap b{display:block;font-family:Fraunces;font-weight:700;font-size:20px;color:var(--choc);line-height:1.25}
+.cc-cap span{font-size:12px;letter-spacing:.2em;color:var(--mut)}
+.cc-b{flex:0 0 46px;width:46px;height:46px;border-radius:50%;border:1px solid rgba(200,151,63,.55);background:#fff;color:var(--choc);font-size:20px;line-height:1;cursor:pointer;transition:background .2s,transform .2s}
+.cc-b:hover{background:var(--cream2)}
+.cc-b:active{transform:scale(.94)}
+.cc:focus-visible .cc-stage{outline:2px solid var(--gold2);outline-offset:4px;border-radius:12px}
 /* marquee */
 .mq{background:var(--deep);color:#EBD9BC;overflow:hidden;padding:15px 0;border-top:1px solid rgba(233,199,123,.25)}
 .mq div{display:flex;gap:26px;width:max-content;animation:mq 60s linear infinite;font-family:Fraunces;font-size:17px;white-space:nowrap}
@@ -261,7 +281,20 @@ footer p{max-width:760px;margin:0 auto 10px}
       <div class="rv"><b>8</b>sobremesas no pote</div>
       <div class="rv"><b>0</b>receitas que precisam de forno</div>
     </div>
-    <ul class="phs"><li class="ph rv"><img src="https://images.unsplash.com/photo-1619985632461-f33748ef8f3e?auto=format&fit=crop&w=560&h=640&q=72" alt="Tortas geladas com frutas vermelhas" width="280" height="320" loading="lazy" decoding="async"><span>Tortas geladas com frutas vermelhas</span></li><li class="ph rv"><img src="https://images.unsplash.com/photo-1676300185983-d5f242babe34?auto=format&fit=crop&w=560&h=640&q=72" alt="Tortas com geleia de frutas" width="280" height="320" loading="lazy" decoding="async"><span>Tortas com geleia de frutas</span></li><li class="ph rv"><img src="https://images.unsplash.com/photo-1547414368-ac947d00b91d?auto=format&fit=crop&w=560&h=640&q=72" alt="Tortas de doce de leite e caramelo" width="280" height="320" loading="lazy" decoding="async"><span>Tortas de doce de leite e caramelo</span></li><li class="ph rv"><img src="https://images.unsplash.com/photo-1792354912044-2db32d86cbe2?auto=format&fit=crop&w=560&h=640&q=72" alt="Pavês na travessa" width="280" height="320" loading="lazy" decoding="async"><span>Pavês na travessa</span></li><li class="ph rv"><img src="https://images.unsplash.com/photo-1622814651041-b9a3c54d60ab?auto=format&fit=crop&w=560&h=640&q=72" alt="Maracujá em camadas" width="280" height="320" loading="lazy" decoding="async"><span>Maracujá em camadas</span></li><li class="ph rv"><img src="https://images.unsplash.com/photo-1672300742770-d286a1c0bd71?auto=format&fit=crop&w=560&h=640&q=72" alt="Potes em camadas" width="280" height="320" loading="lazy" decoding="async"><span>Potes em camadas</span></li><li class="ph rv"><img src="https://images.unsplash.com/photo-1771154136803-8df8e82e9765?auto=format&fit=crop&w=560&h=640&q=72" alt="Potes com frutas" width="280" height="320" loading="lazy" decoding="async"><span>Potes com frutas</span></li><li class="ph rv"><img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=560&h=640&q=72" alt="Chocolate no pote" width="280" height="320" loading="lazy" decoding="async"><span>Chocolate no pote</span></li></ul>
+    <div class="cc" id="cc" tabindex="0" role="region" aria-roledescription="carrossel" aria-label="Fotos das sobremesas. Arraste para os lados ou use as setas do teclado.">
+      <div class="cc-floor"></div>
+      <div class="cc-stage"><div class="cc-in">
+      <figure class="cc-p" data-t="Tortas geladas com frutas vermelhas"><img src="https://images.unsplash.com/photo-1619985632461-f33748ef8f3e?auto=format&fit=crop&w=560&h=640&q=72" alt="Tortas geladas com frutas vermelhas" width="280" height="350" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="cc-p" data-t="Tortas com geleia de frutas"><img src="https://images.unsplash.com/photo-1676300185983-d5f242babe34?auto=format&fit=crop&w=560&h=640&q=72" alt="Tortas com geleia de frutas" width="280" height="350" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="cc-p" data-t="Tortas de doce de leite e caramelo"><img src="https://images.unsplash.com/photo-1547414368-ac947d00b91d?auto=format&fit=crop&w=560&h=640&q=72" alt="Tortas de doce de leite e caramelo" width="280" height="350" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="cc-p" data-t="Pavês na travessa"><img src="https://images.unsplash.com/photo-1792354912044-2db32d86cbe2?auto=format&fit=crop&w=560&h=640&q=72" alt="Pavês na travessa" width="280" height="350" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="cc-p" data-t="Maracujá em camadas"><img src="https://images.unsplash.com/photo-1622814651041-b9a3c54d60ab?auto=format&fit=crop&w=560&h=640&q=72" alt="Maracujá em camadas" width="280" height="350" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="cc-p" data-t="Potes em camadas"><img src="https://images.unsplash.com/photo-1672300742770-d286a1c0bd71?auto=format&fit=crop&w=560&h=640&q=72" alt="Potes em camadas" width="280" height="350" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="cc-p" data-t="Potes com frutas"><img src="https://images.unsplash.com/photo-1771154136803-8df8e82e9765?auto=format&fit=crop&w=560&h=640&q=72" alt="Potes com frutas" width="280" height="350" loading="lazy" decoding="async" draggable="false"></figure>
+      <figure class="cc-p" data-t="Chocolate no pote"><img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=560&h=640&q=72" alt="Chocolate no pote" width="280" height="350" loading="lazy" decoding="async" draggable="false"></figure>
+      </div></div>
+      <div class="cc-ui"><button class="cc-b" type="button" data-d="-1" aria-label="Foto anterior">&#8592;</button><div class="cc-cap" aria-live="polite"><b>Tortas geladas com frutas vermelhas</b><span>01 / 08</span></div><button class="cc-b" type="button" data-d="1" aria-label="Próxima foto">&#8594;</button></div>
+    </div>
     <p class="cap">Fotos ilustrativas, de banco de imagens. No e-book, cada uma das 30 receitas também tem foto.</p>
   </div>
 </section>
@@ -375,6 +408,37 @@ var io=('IntersectionObserver' in window)?new IntersectionObserver(function(es){
 d.querySelectorAll('.rv').forEach(function(el,i){if(io){el.style.transitionDelay=(i%3*80)+'ms';io.observe(el);}else{el.classList.add('in');}});
 var st=d.querySelector('.sticky'),of=d.getElementById('oferta'),hc=d.querySelector('.hero .star');
 function onS(){var r=of.getBoundingClientRect(),h=hc.getBoundingClientRect();st.classList.toggle('on',h.bottom<0&&(r.top>window.innerHeight||r.bottom<0));}
-window.addEventListener('scroll',onS,{passive:true});onS();})();</script>
+window.addEventListener('scroll',onS,{passive:true});onS();
+/* carrossel automático: pausa fora da tela ou com o cursor sobre ele */
+var w=window,cc=d.getElementById('cc');if(!cc)return;
+var sg=cc.querySelector('.cc-stage'),ps=[].slice.call(cc.querySelectorAll('.cc-p')),N=ps.length,
+cb=cc.querySelector('.cc-cap b'),cn=cc.querySelector('.cc-cap span'),
+rm=w.matchMedia&&w.matchMedia('(prefers-reduced-motion: reduce)').matches,
+pos=0,tgt=0,W=1,U=1,R=1,S=1,MAX=1.35,raf=0,last=0,dr=null,vis=false,hov=false,cur=-1;
+function pad(n){return(n<10?'0':'')+n}
+function size(){W=ps[0].offsetWidth;U=W*1.07;R=W*1.9;S=U/R;sg.style.perspective=(W*3.4)+'px';draw();}
+function draw(){for(var i=0;i<N;i++){var x=i-pos;x-=N*Math.round(x/N);var a=x*S,b=Math.abs(a),p=ps[i];
+if(b>MAX){p.style.visibility='hidden';continue;}
+p.style.visibility='';p.style.transform='translate3d('+(R*Math.sin(a)).toFixed(1)+'px,0,'+(R*(1-Math.cos(a))).toFixed(1)+'px) rotateY('+(-a).toFixed(4)+'rad)';
+p.style.setProperty('--dim',(.62*Math.pow(b/MAX,1.5)).toFixed(3));}
+var k=((Math.round(pos)%N)+N)%N;if(k!==cur){cur=k;cb.textContent=ps[k].getAttribute('data-t');cn.textContent=pad(k+1)+' / '+pad(N);}}
+function tick(t){var dt=last?Math.min(.05,(t-last)/1000):.016;last=t;
+if(!dr){pos+=(tgt-pos)*(1-Math.exp(-dt*(rm?30:7)));if(Math.abs(tgt-pos)<.0015){pos=tgt;draw();raf=0;last=0;return;}}
+draw();raf=w.requestAnimationFrame(tick);}
+function kick(){if(!raf)raf=w.requestAnimationFrame(tick);}
+function go(n){tgt=Math.round(tgt)+n;kick();}
+function to(i){var x=i-pos;x-=N*Math.round(x/N);tgt=Math.round(pos+x);kick();}
+sg.addEventListener('pointerdown',function(e){if(e.button>0)return;var f=e.target.closest&&e.target.closest('.cc-p');dr={x:e.clientX,p:pos,lx:e.clientX,lt:e.timeStamp,v:0,m:false,f:f};sg.setPointerCapture(e.pointerId);sg.classList.add('drag');kick();});
+sg.addEventListener('pointermove',function(e){if(!dr)return;var dx=e.clientX-dr.x;if(Math.abs(dx)>5)dr.m=true;pos=dr.p-dx/U;var dt=e.timeStamp-dr.lt;if(dt>0){dr.v=(e.clientX-dr.lx)/dt;dr.lx=e.clientX;dr.lt=e.timeStamp;}});
+function up(){if(!dr)return;sg.classList.remove('drag');if(dr.m){tgt=Math.round(pos-dr.v*180/U);}else if(dr.f){to(ps.indexOf(dr.f));}else{tgt=Math.round(pos);}dr=null;kick();}
+sg.addEventListener('pointerup',up);sg.addEventListener('pointercancel',up);
+sg.addEventListener('pointerenter',function(e){if(e.pointerType==='mouse')hov=true;});
+sg.addEventListener('pointerleave',function(){hov=false;});
+cc.querySelectorAll('.cc-b').forEach(function(b){b.addEventListener('click',function(){go(+b.getAttribute('data-d'));});});
+cc.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){go(1);e.preventDefault();}else if(e.key==='ArrowLeft'){go(-1);e.preventDefault();}});
+if('IntersectionObserver' in w)new IntersectionObserver(function(es){vis=es[0].isIntersecting;}).observe(cc);else vis=true;
+if(!rm)w.setInterval(function(){if(vis&&!hov&&!dr&&!d.hidden)go(1);},3600);
+var rt;w.addEventListener('resize',function(){w.clearTimeout(rt);rt=w.setTimeout(size,120);});
+size();})();</script>
 </body>
 </html>
